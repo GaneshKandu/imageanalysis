@@ -1,0 +1,28 @@
+{
+    "name": "ganeshkandu/imageanalysis",
+    "description": "This tool compares the original image to a recompressed version. This can make manipulated regions stand out in various ways. For example they can be darker or brighter than similar regions which have not been manipulated.",
+    "keywords": ["composer","php","packagist","image","ela","analysis","forensic"],
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Ganesh Kandu",
+            "email": "kanduganesh@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-gd": "*"
+    },
+    "support": {
+        "issues": "https://github.com/ganeshkandu/imageanalysis/issues",
+        "source": "https://github.com/ganeshkandu/imageanalysis"
+    },
+    "minimum-stability": "beta",
+	"autoload": {
+        "files": [
+            "src/image.php"
+		]
+	}
+}
