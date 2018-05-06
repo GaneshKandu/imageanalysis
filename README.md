@@ -12,7 +12,47 @@ Makes the differences between the original and the recompressed image bigger
 
 > best works with jpeg image
 
+## Requirement
+
+PHP 5.3+ and GD extension installed
+
+## Get Started
+
+### Installation
+
+This library is designed to be installed via [Composer](https://getcomposer.org/doc/).
+
+Add the dependency into your projects composer.json.
+```
+{
+  "require": {
+    "ganeshkandu/imageanalysis": "*"
+  }
+}
+```
+
+Download the composer.phar
+``` bash
+curl -sS https://getcomposer.org/installer | php
+```
+
+Install the library.
+``` bash
+php composer.phar install
+```
+
+#### or
+
+> To add in in your dependencies
+
+``` bash
+php composer.phar require ganeshkandu/imageanalysis
+```
+
+# USAGE
+
 ```php
+
 <?php
 
 include "vendor/autoload.php";
