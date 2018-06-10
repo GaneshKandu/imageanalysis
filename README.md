@@ -57,7 +57,7 @@ php composer.phar require ganeshkandu/imageanalysis
 
 include "vendor/autoload.php";
 
-$ela = new ImageAnalysis\Image();
+use ImageAnalysis\ImageAnalysis();
 
 /*
 	@desc This can make manipulated regions stand out in various ways.
@@ -70,9 +70,9 @@ $ela = new ImageAnalysis\Image();
 	@return image resource
 */
 
-$out = $ela->ELA('sample.jpg',80,10);
+$out = ImageAnalysis::ELA('sample.jpg',80,10);
 
-header('Content-Type: image/png');
+header('Content-Type: image/jpeg');
 
 imagejpeg($out);
 
