@@ -10,9 +10,9 @@ Contact Mail : kanduganesh@gmail.com
 
 namespace ImageAnalysis;
 
-class Image_{
+class Image{
 
-	function __construct($im){
+	public function __construct($im){
 		$this->location = $im;
 		$temp = $this->getSize();
 		switch($temp['mime']){
@@ -61,32 +61,3 @@ class Image_{
 	}
 	
 }
-
-class Image{
-	
-		function ELA($image, $quality = 80, $scale = 10){
-		$image1 = new Image_($image);
-		$temp_file = tempnam(sys_get_temp_dir(), 'ELA');
-		imagejpeg($image1->image , $temp_file, $quality);
-		$image2 = new Image_($temp_file);
-		$info = $image1->getSize();
-		$out = imagecreatetruecolor($info['width'], $info['height']);
-
-		for($x = 0; $x < $info['width']; $x++){
-			for($y = 0; $y < $info['height']; $y++){
-				$pix1 = $image1->getPixel($x, $y);
-				$pix2 = $image2->getPixel($x, $y);
-				$pix1['R'] = abs($pix1['R'] - $pix2['R']);
-				$pix1['G'] = abs($pix1['G'] - $pix2['G']);
-				$pix1['B'] = abs($pix1['B'] - $pix2['B']);
-				$pix1['R'] *= $scale;
-				$pix1['G'] *= $scale;
-				$pix1['B'] *= $scale;
-				imagesetpixel($out, $x, $y, $image1->pixel2color($pix1));
-			}
-		}
-		unlink($temp_file);
-		return $out;
-	}
-}
-
