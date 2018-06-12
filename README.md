@@ -57,7 +57,7 @@ php composer.phar require ganeshkandu/imageanalysis
 
 include "vendor/autoload.php";
 
-use ImageAnalysis\ImageAnalysis();
+use ImageAnalysis\ImageAnalysis;
 
 /*
 	@desc This can make manipulated regions stand out in various ways.
